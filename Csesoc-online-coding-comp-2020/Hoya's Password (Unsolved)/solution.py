@@ -15,15 +15,23 @@ import sys
 #
 
 def hoyas_Password(n, words):
-    # Write your code here
+    
+    
 
 if __name__ == '__main__':
-    num = int(input().strip())
+    # num = int(input().strip())
 
-    strings = []
+    # strings = []
 
-    for _ in range(num):
-        strings_item = input()
-        strings.append(strings_item)
+    # for _ in range(num):
+    #     strings_item = input()
+    #     strings.append(strings_item)
+
+    with open("input.txt", "r")  as f:
+        num = f.readline()
+        strings = []
+        for _ in range(int(num)):
+            strings.append(f.readline().strip())
+    print(strings)
 
     hoyas_Password(num, strings)

@@ -35,3 +35,11 @@ class Solution:
             if ds1 == ds2:
                 return True
         return False
+    
+if __name__ == "__main__":
+    with open("input.txt", "r") as f:
+        s1 = f.readline().strip().strip("\"")
+        s2 = f.readline().strip().strip("\"")
+    sol = Solution()
+    res = sol.checkInclusion(s1,s2)
+    print(res)

@@ -36,7 +36,8 @@ class Solution:
                 d[strL[-1]] += 1
             else:
                 d[strL[-1]] = 1
-
+            print(d)
+            print(dp)
             if d == dp:
                 l.append(i)
             
@@ -45,5 +46,8 @@ class Solution:
 
 if __name__ == "__main__":
     with open("input.txt", "r") as f:
-        f_contents = f.readline()
-        print(f_contents)
+        s = f.readline().strip().strip("\"")
+        p = f.readline().strip().strip("\"")
+    sol = Solution()
+    res = sol.findAnagrams(s,p)
+    print(res)
