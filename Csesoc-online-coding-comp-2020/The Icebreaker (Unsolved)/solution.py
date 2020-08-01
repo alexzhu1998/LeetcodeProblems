@@ -16,13 +16,27 @@ import sys
 #
 
 def icebreaker(xD, yD, zD):
+    # print(xD)
+    # print(yD)
+    # print(zD)
     # Write your code here
+    box1 = (5,4,3)
+    box2 = (2,3,10)
+    box3 = (9,4,3)
+    # when two boxes were combined together, take max of the two dimension, add one dimension.
+    
+
+
+
+
+    return
 
 if __name__ == '__main__':
-    xDimension = int(input().strip())
+    with open("input.txt", "r") as f:
+        xDimension = int(f.readline().strip())
 
-    yDimension = int(input().strip())
+        yDimension = int(f.readline().strip())
 
-    zDimension = int(input().strip())
+        zDimension = int(f.readline().strip())
 
-    icebreaker(xDimension, yDimension, zDimension)
+        icebreaker(xDimension, yDimension, zDimension)
