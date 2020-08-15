@@ -1,0 +1,69 @@
+using this to mark off testing now
+
+2.1 constructors and destructors
+x default constructor 
+x constructor
+x iterator constructor
+x initializer list constructor
+x copy constructor
+x move constructor
+destructor - can we?
+
+note: freeing/dstroying needs work to mark off copy/move/destructor
+
+2.2 operations
+x copy assignment
+x move assignment
+
+2.3 methods
+x insert node
+x insert edge
+x delete node
+x replace
+x merge replace
+clear
+x is node
+x is connected
+x get nodes_
+x get connected
+x get weights
+
+2.3.2 iterators
+find
+erase
+erase
+cbegin
+eend
+crbegin
+crend
+begin
+end
+rbegin
+rend
+
+2.4 friends
+equal
+not equal
+output stream
+
+3.5 edge custom iterator
+3.5.2 iterator order
+
+3.6 internal representation
+
+3.7 throw exceptions
+
+3.8 other
+- header guard
+- c++17 style
+- move object something
+- mark functions noexcept
+
+3.9 const correctness
+
+misc todo: 
+
+make edge and node implementations privtae
+use more char tests
+shift implementation to h
+add comparators
