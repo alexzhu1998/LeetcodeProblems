@@ -1,50 +1,52 @@
+#include <sstream>
 #include <iostream>
 #include <string>
+#include <vector>
+
+using namespace std;
 
 int main (int argc, char* argv[]) {
-    std:: string count;
-    getline(std::cin,count);
-    const int length = std::stoi(count);
-    std::cout << length << std::endl;
-    const int numOfnum = 2;
-    int tupleArray[length][numOfnum]{};
-    
-    for (int i = 0; i < length; i++) {
-        for (int k = 0; k < length; k++) {
-            for (int m = 0; m < numOfnum; m++) {
-                std::cout << tupleArray[k][m] << " ";
-            }
-            std::cout << std:: endl;
-        }
-        for (int j = 0; j < numOfnum; j++){
-            std::cin >> tupleArray[i][j];
-        }
-        // std:: cout << i << std:: endl;
-        // std:: cout << "sum " << tupleArray[i][0] << " " << tupleArray[i][1] << std::endl;
-        // std::string x,y;
-        // x = std::cin.get();
-        // std::cin.ignore(100,' ');
-        // y = std::cin.get();
-        // std::cin.ignore(100, '\n');
-        // tupleArray[i][0] = std::stoi(x);
-        // tupleArray[i][1] = std::stoi(y);
-        // std::cout << "sum " << tupleArray[i][0] << " " << tupleArray[i][1] << std::endl;
+    int number;
+    cin >> number;
+    vector<int> v;
+    for (int i = 0; i < number; ++i) {
+        int temp;
+        cin >> temp;
+        v.push_back(temp);
     }
 
-
-    // for (int i = 0; i < length; i++) {
-    //     for (int j = 0; j < numOfnum; j++){
-    //         std::cout << "num " << tupleArray[i][j] << " ";
-    //     }
-    //     std::cout << std::endl;
+    // for (int i = 0; (unsigned)i < v.size(); i++) {
+    //     cout << v[i] << endl;
     // }
-        
-            
-        
-
-
-    std::string end;
-    getline(std::cin, end);
 
     return 0;
 }
+
+// https://stackoverflow.com/questions/7868936/read-file-line-by-line-using-ifstream-in-c
+
+
+
+// #include <fstream>
+// std::ifstream infile("thefile.txt");
+
+// Method 1
+// int a, b;
+// while (infile >> a >> b)
+// {
+//     // process pair (a,b)
+// }
+
+
+// Method 2
+// #include <sstream>
+// #include <string>
+
+// std::string line;
+// while (std::getline(infile, line))
+// {
+//     std::istringstream iss(line);
+//     int a, b;
+//     if (!(iss >> a >> b)) { break; } // error
+
+//     // process pair (a,b)
+// }
