@@ -91,6 +91,8 @@ int main () {
     
     cout << "output" << endl;
     cout << res << endl;
+    string s;
+    getline(cin, s);
     return 0;
 
 }
