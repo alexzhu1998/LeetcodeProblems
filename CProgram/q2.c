@@ -2,70 +2,60 @@
 #include <stdlib.h>
 #include <string.h>
 
-// int input(char *s,int length);
+
+#define SIZE 4
 
 int main()
 {
     char *buffer;
-    size_t bufsize = 5;
-    // size_t characters;
-    char** charArray = NULL;
+    size_t bufsize = SIZE + 1;
+    char** tfhstring = NULL;
     int size = 0;
 
     buffer = malloc(bufsize * sizeof(char));
-    while(1){
-        int tmp = scanf("%s",buffer);
-        if (tmp == EOF) {
-            break;
-        }
-        // printf("%s",buffer);
-        char temp[bufsize];
-        strcpy(temp,buffer);
-        charArray = realloc(charArray,(size+1)*(sizeof(char*)));
-        charArray[size] = malloc(bufsize*sizeof(char));
-        
-        strcpy(charArray[size++],temp);
-
+    while(scanf("%s",buffer)==1){
+        tfhstring = realloc(tfhstring,(size+1)*(sizeof(char*)));
+        tfhstring[size] = malloc(bufsize*sizeof(char));
+        strcpy(tfhstring[size],buffer);
+        size++;
     }
 
     free(buffer);
+    // loop through the 24hour clock 
     for (int i =0; i < size; i++) {
-
-        
-        char hour[3];
-        strncpy(hour,charArray[i],2);
-        hour[0] = charArray[i][0];
-        hour[1] = charArray[i][1];
-        hour[2]= '\0';
-        // hour[1] = charArray[i][1];
-        char minutes[3];
-        minutes[0] = charArray[i][2];
-        minutes[1] = charArray[i][3];
-        minutes[2] = '\0';
-        int d = atoi(hour);
-        if (d > 12 && d <=23) {
-            int newHour = d-12;
-            // printf
-            if (newHour < 10) {
-                printf("0%d:%s PM\n",newHour,minutes);
+        char h[3],m[3];
+        // extract hours and minutes, deal with them separately
+        for (int j =0; j < 3; j++) {
+            if (j == 2){
+                h[j] = '\0';
+                m[j] = '\0';
             } else {
-                printf("%d:%s PM\n",newHour,minutes);
+                h[j] = tfhstring[i][j];
+                m[j] = tfhstring[i][j+2];
+            }
+        }
+        int hour24 = atoi(h);
+        if (hour24 > 12 && hour24 < 24) {
+            int newHour = hour24-12;
+            // print them out after manipulation
+            if (newHour < 10) {
+                printf("0%d:%s PM\n",newHour,m);
+            } else {
+                printf("%d:%s PM\n",newHour,m);
             }
             
         } else {
-            if (d == 12) {
-                printf("%s:%s PM\n",hour,minutes);
+            if (hour24 == 12) {
+                printf("%s:%s PM\n",h,m);
             } else {
-                printf("%s:%s AM\n",hour,minutes);
+                printf("%s:%s AM\n",h,m);
             }
             
         }
+        free(tfhstring[i]);
     }
 
-    for (int i =0; i < size ; i++) {
-        free(charArray[i]);
-    }
-    free(charArray);
+    free(tfhstring);
 
-    return(0);
+    return 0;
 }
