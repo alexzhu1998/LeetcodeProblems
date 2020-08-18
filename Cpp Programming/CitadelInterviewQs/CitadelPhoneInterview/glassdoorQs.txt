@@ -1,0 +1,120 @@
+These questions are asked by Yan Wang:
+1 a) Given a series of coin toss, X where X = 1, -1 represents heads and tails respectively
+And given a series of guesses G, where E[G] = 0
+If the probability of making the correct guess is p, find Corr(G,X) in terms of p.
+
+1 b) Given another series of guess Ga and Gb such that the corr(Ga,Gb) = 0, E[Ga] = E[Gb] = 0, and probability of making the correct guess is 
+pa and pb respectively, find G = f(Ga,Gb) such that corr(G,X) is maximised.
+
+2) Given a sequence of integers from 1 to n, and given a permutation
+a[1], .. , a[n], find the total number of permutations such that for any index i in the new array, a[j] < a[i] or a[j] > a[i] for all j < i
+
+
+Glassdoor Qs:
+
+Math/Stats:
+1) Given the probability of coin as head is p. What is the expected number to get three heads in a row?
+
+4) Calculate var(X) given that the data points distribute uniformly on a 3D sphere?
+
+5) What is a martingale?
+
+6) Explain L1 or L2 regularization? (MUST KNOW)
+
+8) Explain Linear Regression, Ridge regularization, feature selection (MUST KNOW)
+
+9) How to convert a uniform random variable to a standard normal random variable?
+
+10) You have r red balls, w white balls in a bag. If you keep drawing balls out of the bag 
+until the bag now only contains balls of a single color (ie you run out of a color) 
+what is the probability you run out of white balls first? (in terms of r and w).  
+
+11) Topic familiarity with (iterative LR, PCA, orthogonal matching pursuit)
+Minimal Mean Square Error, Probability Theory (binomial rv, gaussian distributions, markov chains
+,Expected value/Variance, Hypothesis Testing)
+
+16) Nine fair coins are tossed, what is the probability of an odd number of heads landing?
+
+17) Why add L2 penalty to linear regression? (MUST KNOW)
+
+19) Expected number of flips to see 2 heads from a series of fair coin toss
+
+20) Why is regularisation important (e.g. why ridge/lasso regression compared to OLS) even when # of samples > # of parameters. (L1 vs L2 regularisation) (MUST KNOW)
+
+24) What's the differene between regress y on x and regress x on y?
+
+29) Find minimum of x^x
+
+30) What is the best way to model a response, y, given a large set of indicators/features, say x_1,...,x_100?
+
+32) Difference between GNB and logistic regression? Which one would you opt under different circumstances?
+
+33) What do you know about Time Series Analysis? Autoregressive Models?
+
+34) Given log X ~ N(0,1). Compute Expectation of X.
+
+35) Number of rolls to see all six sides on a die.
+
+36) How do you estimate square root of 5? (Newton's method)
+
+37) You have two strings whose only known property is that when you light one end of 
+either string it takes exactly one hour to burn. The rate at which the strings will burn is
+completely random and each string is different. How do you measure 45 minutes?  
+
+38) Chance that a student passes the test is 10%. What is the chance that out of 400 students 
+AT LEAST 50 pass the test? Check the closest answer:
+The offered answers were 5%, 10%, 15%, 20%, 25%.   
+
+41) Pros and Cons of Naive Bayes Classifier, Random Forest, Linear regression, Neural Networks, Logistic Regression
+
+
+Algorithm: (R/C++)
+2) Write a regression algorithm in C/C++/R
+
+3) What is the data structure of a dictionary in Python? (x2)
+
+7) Transfer a number to all possible strings (permutation)
+
+12) Implement Two Sum
+
+13) Calculatie the PnL of a stock and get the times of comparison
+
+14) Compute the maxDrawDown of the stock
+
+15) Create a linked list class
+
+18) How to search in a heap
+
+21) Describe heapsort, quick sort, BFS, DFS
+
+22) What is virtual functions in C++? How to use it?
+
+23) Information Theory, what is entropy, significance of bits
+
+25) Given a series of real numbers, what's the optimal point in real line that minimize the distance between all these numbers?
+follow up: what's the best algorithm to calculate the median of a sequence of numbers?
+follow up2: design an algorithm able to update the median of sequence as there are new numbers coming in.
+
+26) given an array of numbers: 1,5,3,2,4,2,3,1,2,3,2,4. Return another array with 
+duplicate numbers in consecutive positions and in order of their first appearance, 
+in the example the result should be: 1,1,5,3,3,3,2,2,2,2,4,4
+
+27) Given an array, find out three numbers such that their product is maximum
+
+28) Write a program and output all prime numbers smaller than an integer N
+
+29)You are holding two eggs in a 100-story building. If an egg is thrown out of the 
+window, it will not break if the floor number is less than X, and it will always break 
+if the floor number is equal to or greater than X. What strategy would you use to 
+determine X with the minimum number of drops in a worst case scenario? 
+
+31) Go through all the sorting algorithms that you know. Advantage of each one?
+
+36) Describe all C++ casts and their properties.
+
+37) Explain Linear Programming
+
+40) Explain Polymorphism in C++
+
+Finance:
+39) What is the probability of an option ending up in the money if the volatility of the underlying stock increases?
