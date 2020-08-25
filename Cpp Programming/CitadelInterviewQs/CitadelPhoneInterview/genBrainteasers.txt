@@ -1,0 +1,34 @@
+General Brainteasers
+1) 
+How many times a day does a clock’s hands overlap?
+
+Ans)
+It will overlap 22 times. The minute hand moves at 360 deg/h, the hour hand moves at 30 deg/h, the difference is 330 deg/h. So we wish to find how many times their difference is a multiple of 360 deg (which is when they overlapped). 330/360 is how many times they will overlap per hour. 330/360*24 = 22. 
+
+2)
+You have a 100 coins laying flat on a table, each with a head side and a tail side. 10 of them are heads up, 90 are tails up. You can’t feel, see or in any other way find out which 10 are heads up. Your goal: split the coins into two piles so there are the same number of heads-up coins in each pile. Is This possible? How do you do it?
+
+Ans)
+Split the coins into 10 and 90 each. Now there are x of them with heads up in the pile of 10s and 10-x of them with heads up on the other pile. Flip the pile of 10s and you have 10-x on both sides with heads.
+
+3) There are three boxes, one contains only apples, one contains only oranges, and one contains both apples and oranges. The boxes have been incorrectly labeled such that no label identifies the actual contents of its box. Opening just one box, and without looking in the box, you take out one piece of fruit. How many tries does it take to label all boxes?
+
+Ans)
+Pick a fruit from apple + orange. If it is an apple, this must be the apple box, the orange box must be apple + oranage, and the apple box must be orange. In fact you can start with any box.
+Current		Real1		Real2		
+Apple		orange		apple+orange
+Orange		apple+orange	apple		
+Apple+orange	apple		orange
+
+4) Find minimum of x^x
+
+Ans)
+lny = x*ln(x)
+1/y*dy/dx = ln(x)+ 1
+dy/dx = x^x*(ln(x)+1) := 0
+x = 1/e
+y = (1/e)^(1/e)
+
+5) You have two strings whose only known property is that when you light one end of 
+either string it takes exactly one hour to burn. The rate at which the strings will burn is
+completely random and each string is different. How do you measure 45 minutes?  

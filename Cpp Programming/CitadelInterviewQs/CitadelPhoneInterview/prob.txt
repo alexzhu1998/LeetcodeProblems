@@ -1,0 +1,239 @@
+Probability/Stats Questions
+
+1)
+In a country that only wants girls, every family continues to have children until they have a girl. If they have a boy, they have another child. If they have a girl, they stop. What is the proportion of boys to girls in the country?
+
+Ans) The probability of having each boy and girl is still 1/2. The proportion of boys to girls will still be 1:1 regardless of the child carrying strategy.
+
+2) You start out with 1 dollar and your friend starts out with 2 dollars. You bet 1 dollar until one of you runs out of money. You have a 2/3 chance of winning each bet. What is your chance of winning?
+
+Ans)Gambler's Ruin for the case of i = 1, N = 3. Or simply just use geometric sum to add the probability.
+
+(2/3)^2*(1+(1/3)*(2/3)+((1/3)*(2/3))^2+((1/3)*(2/3))^3+...) = (2/3)^2*(1/(1-2/9)) = 4/7
+
+Use recursion
+p = (2/3)^2 + (2/3)(1/3)*p
+
+3)For a 3 sets tennis game, would you bet on it finishing in 2 sets or 3 sets?
+
+Ans)
+Assuming player1 has probability p, player2 has probability q. 
+
+4) Given the probability of coin as head is p. What is the expected number to get three heads in a row?
+
+Ans)
+Recursive solution
+E3 = p(E2+1)+q(E2+E3+1) ---> E3 = E2+1+q/p*(E2+1) = 1/p*(E2+1)
+E2 = p(E1+1)+q(E1+E2+1) ---> E2 = 1/p*(E1+1)
+E1 = p(1) + q(E1+1) ---> E1 = 1+q/p = 1/p
+
+Recursive formula
+E{n} = 1/p*(E{n-1}+1)
+Deriving Closed Form
+Consider f(n) = E{n} + 1/(1-p)
+f(n) = 1/p*(f(n-1))
+f(n) = (1/p)^(n-1)*f(1) = (1/p)^(n-1)*(1/(p*(1-p)) = (1/p^n)*(1/(1-p))
+E{n} = 1/(1-p)*(1/p^n-1)
+
+if p = 1/2, E1 = 2, E2 = 6, E3 = 14
+
+Iterative solution
+E{n} = p^{1}(E{n}+1) + p^{2}(E{n}+2) + p^{3}(E{n}+3) + p^{4}(E{n}+4) + ... + p^{n}(E{n}+n)
+
+5) Calculate var(X) given that the data points distribute uniformly on a 3D unit sphere?
+
+Ans) (1,t,p) 0<=t<=2pi, 0<=p<=pi
+
+We want f(v) to be a constant pdf so that f(t,p) maps to a uniform distribution on the sphere. Since int int_S f(v) dA = 1, we get that f(v) = 1/(4*pi). 
+
+Parametrising v as (t,p) we have that, f(v)dA = f(t,p)dtdp. Since we also know that dA = sin(p)dpdt
+f(t,p) = 1/4pi*sin(p)
+
+Finding marginal, 
+f(t) = int_0^{pi} f(t,p)dp = 1/(2*pi)
+f(p) = int_0^{2pi} f(t,p) dt = sin(p)/2
+
+Using inverse transform technique for p, we can simulate values for p that follows a pdf of f(p). 
+For t, it will also be very easy to simulate values for t.
+
+If X = (t,p) Cov(vec(X)) is a 2 by 2 matrix
+
+6) You have r red balls, w white balls in a bag. If you keep drawing balls out of the bag until the bag now only contains balls of a single color (ie, you run out of a color). What is the probability you run out of white balls first? (in terms of r and w).
+
+Ans) This question is identical to the probability of drawing red ball last, which has a probability of r/(w+r). With a symmetry argument.
+
+7)26 red, 26 black. Take one every time, you can choose to guess whether it's red. You have only one chance. If you are right, you get 1 dollar. What's the strategy? What's the expected earning?
+
+Ans)
+Each time you pull a caard, there is an equal probability for it to be red or black. Thus no matter when you guess your odds are 50%, and expected return should be 50 cents.
+
+8) You have two decks of cards: a 52 card deck (26 black , 26 red) and a 26 card deck (13 black, 13 red). You randomly draw two cards and win if both are the same color. Which deck would you prefer? What if the 26 card deck was randomly drawn from the 52 card deck? Which deck would you prefer then?
+
+Ans)
+Drawing two from the 52 cards deck, probability is 26/52*25/51 = 25/102. Drawing two from 26 card deck is 13/26*12/25 = 6/25. So clearly first deck is better.
+
+If there is a third deck, 26 card deck is randomly drawn from the 52 card deck, it can be proven that it is always easier to draw two cards of equal color than 26,26 deck. 
+
+9) Nine fair coins are tossed, what is the probability of an odd number of heads landing? What about 100 fair coins?
+
+Ans)
+Odd number of heads landing is simply 1,3,5,7,9 which is prob of equal to even number of tails which is equal to even number of heads. Therefore 1/2.
+
+Flip first 99 coins
+
+10) Expected number of flips to see 2 heads from a series of fair coin toss?
+
+Ans)
+4
+
+11) Given log X ~ N(0,1). Compute Expectation of X.
+
+Ans)
+E(X) = E(e^Z) = mgf of Normal = e^(1*mu+1/2*sigma^2)
+
+12) Chance that a student passes the test is 10%. What is the chance that out of 400 students 
+AT LEAST 50 pass the test? Check the closest answer:
+The offered answers were 5%, 10%, 15%, 20%, 25%.
+
+Ans)
+mean = 40, std = 6
+40+6 = 46 (1std away) 67% 
+40+2*6= 52 (2std away) 95%
+Pr(Z>1.66) > Pr(Z > 1) = (1-67%)/2 = 0.158
+Pr(Z>1.66) < Pr(Z > 2) = (1-95%)/2 = 0.023
+Pr(Z>1.645) = 1.645
+
+13) A woman has two babies, one of them is a girl. What is the probability the other is a boy.
+
+Ans)
+Pr(GG|G) = Pr(GG)/(P(GG)+P(GB)+P(BG)) = 1/4/(3/4) = 1/3
+Knowing the order is very important
+
+14) What is the probability that the 4th business day of the month is a thursday?
+
+Ans)
+Assume every month has the same number of days. 28 days
+Pr(1st business day of the month is Monday) = Pr(1st day of the month is )3/7
+
+15) Consider a deck 52 cards, you pick first 1 card, Probability your card is larger?
+
+Ans)
+1/13*(4+8+12+...+48) / 51 = 24/51
+
+Pr(Not getting a tie| A card is drawn) = 48/51
+By symmetry Pr(Win|A card is drawn) = 24/51
+
+16) An ant walks on a vertex of a cube. One minute to walk from vertex to vertex. Each vertex has 3 edges. Equal probabilty to walk on each edge. Expected time to get to original vertex?
+
+Ans)
+A -> B,C,D
+B -> A,C,D
+
+A <-> B
+A <-> C
+A <-> D
+
+B <-> E
+B <-> F
+
+C <->
+
+A <-> B
+  <-> C
+  <-> D
+
+B <-> E
+  <-> F
+C <-> E 
+  <-> G
+D <-> F
+  <-> G
+
+E <-> H
+F <-> H
+G <-> H
+
+V = {A,B,C,D,E,F,G,H}
+E(To get to origin) = sum{i in V} pr(i)E(To get to origin|i)
+		 
+E(Get back to origin| 1 edge away) = 1 + E(Get back to origin | 2 edges away)
+E1 = 1/3 + 2/3*(E2+1) 
+E2 = 1 + 2/3*(E1) + 1/3*(E3)
+E3 = 1 + E2
+
+E0 = 1/3*(E1+1)+1/3*(E1+1)+1/3*(E1+1)
+
+17) set up for a date between 9pm to 10pm. Each of you goes to specify place at some point of the interval and wait 15mins. Probability of seeing each other?
+
+Ans) x -> x+15
+x = time i arrive 
+y = time she arrives
+0<x<1
+Pr(Y>X and Y < X+0.25)
+Pr(Y>X) - Pr( Y > X+0.25) = 1/2 - 9/32 = 7/32
+
+1 - Pr(|Y-X|>0.25) = 7/16
+
+18) I flip a fair coin 1 million times. What is the expected number of exactly 6 heads followed by 6 tails? (Strings)
+
+Ans)
+Pr(6 H followed by 6 T) = (1/2)^6*(1/2)^6 = 1/2^12
+
+(1-2^12)
+X = Binomial R.V.
+p = 1/2^12
+
+(1000000-11)/2^12
+
+19) Random walk from 0 to 1000. Start at 80. Prob of getting 0 
+
+(1000-80)/1000
+
+P(reaching 0 given at i) = 1-(p/q)^i/(1-(p/q)^N)
+1- i/N
+
+20) 5 metre wooden plank. One end of the plank is the safe end. Put on a random spot (x metre from the safe end). At each step, you take 1 step to the safe end or the dangerous end with equal prob.
+
+Ans)
+1-x/5
+Pr(getting to 0 from x) = Px
+
+P1 = 1/2 + 1/2*P2
+P2 = 1/2*P1+ 1/2*P3
+P3 = 1/2*P2+ 1/2*P4
+P4 = 1/2*P3
+P5 = 0
+
+Px = 1/2*P{x-1}+1/2*P{x+1}
+
+Px - Px-1 = Px-1 - Px-2
+Px - Px-1 = x*(P2-P1)
+Px-1 -Px-2 
+Px-2 - Px-3
+PN - P0 = N*(P1-P0) --> 0 - 1 = N*(P1-1) --> P1 = 1-1/N
+
+Px -P0 = x*(P1-P0)
+Px = 1 + x*(-1/5)
+
+21) Suppose you are throwing a dart at a board with radius r. What is expected distance to the centre?
+Suppose you win a dollar if you hit 10 times in a row, inside a circle with radius r/2. You have to pay 10 cents each try. If you do 100 try (10 dollars), how much would you have lost/made in expectation
+
+Ans)
+Distribution of distance: Each time I land a dart d = r*cos(theta) F(x)= x^2*pi/r^2*pi = x^2/r^2
+f(x) = 2x/r^2
+E(x) = int_0^{r}2x^2/r^2 = 2/3*r
+(100-9)*Pr(10 times in a row)- 10 = (100-9)*(1/4)^10 - 10 = 10^-4-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+

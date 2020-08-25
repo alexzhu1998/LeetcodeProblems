@@ -1,0 +1,5 @@
+
+
+I am quite interested in the flexibilities and freedom in the extent of how quant researchers can develop, testing to production. Would the company put more priority on predictive power of a quant strategy or interpretability? So in other words, what happens if there are strategies that are too difficult to understand but they have proven to work?
+
+How does Citadel Securities measure the performance of a quant researcher? Because the role is different to software engineer/ traders

@@ -1,0 +1,22 @@
+Algorithms C++
+
+Python: https://www.edureka.co/blog/interview-questions/python-interview-questions/
+
+1) What compilers have you used?
+
+Ans)
+g++ compiler with -Wall option for giving warnings
+
+2) C++ Design Patterns?
+
+Ans)
+
+
+3) What is the data structure of a dictionary in Python?
+Ans)
+A dictionary maps keys to values. It is definitely most similar to a hash table, but there are often many other ways to perform such a mapping.
+For instance: Red black trees can do such a mapping with O(log N) time
+RB trees are self balancing trees that have alternating red and black nodes to maintain the property that the longest path from root is no more than
+twice the length of the shortest path. Search, Insert, Remove will have O(log N) run time.
+A hash table is a data structure that maps keys to values by taking the hash value of the key (applying some hash function to it) and map to a bucket
+where one or more values are stored.

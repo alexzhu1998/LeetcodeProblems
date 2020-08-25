@@ -1,0 +1,3 @@
+Finance Questions
+
+1) Derive the Black Scholes Equation for a stock, S. What boundary conditions are satisfied at S = 0 and S = infty.

@@ -1,0 +1,88 @@
+Statistics Questions
+
+1)
+What is Type 1 error?
+Ans)
+Rejecting the True Hypothesis, in the contrary Type 2 error is failing to reject the false hypothesis.
+Type 1 error is the alpha level/strictness we set for the test
+
+2) 
+Why is y regressing on x different to x regressing on y?
+
+Ans)
+beta1_y_on_x = Sxy/Sxx = Cov(X,Y)/Var(X) (given that x is measured without error, y has sampling error)
+beta1_x_on_y = Sxy/Syy = Cov(X,Y)/Var(Y)
+Corr(x,y) = Cov(x,y)/(SD(x)*SD(y)) (which is symmetrical)
+
+3)
+What is a martingale?
+
+Ans)
+A stochastic process where given a known history of the process up to time t, the conditional expectation given previous values is the same as expectation of the present value.
+
+4)
+Explain L1 or L2 regularization? Advantages of LASSO and ridge?
+
+Ans)
+L1 Constraints is sum_{i=1}^{n}|b_i| < 1
+L2 Constraints is sum_{i=1}^{n} b_i^2 < 1, L2 penalty
+LASSO minimises RSS + lambda*sum_{i=1}^{n} |b_i|
+Ridge minimises RSS + lambda*sum_{i=1}^{n} b_i^2
+
+The point of these regularization techniques is to balance bias variance tradeoff, when reacting to new test data. 
+Ridge does coefficient shrinkage but not feature selection, it will never reduce coefficients to 0
+LASSO does, so it performs feature selection as well.
+
+LASSO tends to do well if only a few predictors actually influence the response, whereas Ridge does well if large amount of predictors influence the response equally.
+
+5)
+Explain PCA.
+
+Ans)
+Uses various linear algebra theorems such as SVD, minimisation of quadratic form to find orthogonal principle components (eigenvectors) with maximum variance/sum of squares that minimises each point and the perpendicular distance with the line.
+
+Assumptions are unit vectors, scaled against its sqrt(sum of squares) or std.
+
+6)
+Explain p-values
+
+Ans)
+A measure of how likely it is for the calculated statistic value from our observed data be an extreme value 
+
+
+7)
+Logistic Regression and Gaussian Naive Bayes
+
+Ans)
+Logistic Regression - Maximum Likelihood, log odds to scale from [0,1] to [-inf,inf], log odds ratio, deviance statistics.
+R^2 = LL(Null) - LL(Proposed Model) / (LL(Null) - LL(Saturated Model))
+Null deviance - Residual Deviance -> Chi Squared(p_null - p_proposed)
+
+
+Gaussian Naive Bayes - Classify a new data point by multiplying prior probability (usually 0.5) with the likelihood function of that point for each predictor. 
+
+The usual way to test for accuracy for GNB is confusion matrix and false positives.
+
+Usually, classifying using GNB will result in higher bias but lower variance (Not overfitting to training data), wheras logistics regression is less so. Also, logisitic regression is able to train the model using functional form which is easy to compute. Whereas GNB will require computation every time a new data point enters.
+
+8)
+Explain R^2. Why is R^2 not good sometimes?
+
+Ans) 
+R^2 = (Var(y mean)-Var(fit))/Var(y mean) = proportion of variance explained = variance explained/variance of response. Not Var(fit) = RSS/n
+Adding variables will never reduce R^2, it will make SS(fit) lower everytime you add a new variable.
+Adjusted R^2 scale it down by number of variables.
+
+Either way, R^2 tells a relationship between movement of dependent variables based on independent variables.
+
+9)
+Explain ANOVA 
+
+Ans)
+Its a way of measuring whether mean of local sample forms a regression line. Using the F score to test whether this fits as a regression model.
+
+
+F = Variation explained/ Variation not explained = (SS(mean) - SS(fit)/(p_fit-p_mean))/(SS(fit)/(n-p_fit)))
+
+
+
