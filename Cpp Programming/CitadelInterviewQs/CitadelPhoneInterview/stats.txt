@@ -84,5 +84,12 @@ Its a way of measuring whether mean of local sample forms a regression line. Usi
 
 F = Variation explained/ Variation not explained = (SS(mean) - SS(fit)/(p_fit-p_mean))/(SS(fit)/(n-p_fit)))
 
+10)
+Assumption of Linear Regression
 
+Ans)
+L inear 
+I ndependent
+N ormal
+E qual error
 

@@ -25,9 +25,7 @@ int main () {
     int sum = diffV[0];
     for (int i = 1; (unsigned)i < diffV.size(); i++) {
         sum = min(sum+diffV[i],diffV[i]);
-        if (netNeg > sum) {
-            netNeg = sum;
-        }
+        if (netNeg > sum) netNeg = sum;
         cout << sum << " ";
         // netNeg = sum ? netNeg > sum;
     }

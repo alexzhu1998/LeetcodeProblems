@@ -20,3 +20,133 @@ RB trees are self balancing trees that have alternating red and black nodes to m
 twice the length of the shortest path. Search, Insert, Remove will have O(log N) run time.
 A hash table is a data structure that maps keys to values by taking the hash value of the key (applying some hash function to it) and map to a bucket
 where one or more values are stored.
+
+4) Regression in R
+
+Ans)
+data <- read.table("some.txt",header = T, sep = "\t")
+attach(data)
+model <- lm(LungCap ~ Age + Height)
+# Summary table of the model
+summary(model1)
+# correlation of age and height
+corr(Age,Height,method="pearson")
+# confidence intervals
+confint(model1,conf.level=0.95)
+# diagnostics
+plot(model1)
+
+5) Regression in C++
+
+Ans)
+See file
+
+6) MaxDD in C++
+
+Ans)
+See file 
+
+7) Constructors, Destructors, Virtual Functions, C++ Casts, Polymorphism
+
+Ans)
+Constructor in Python is the init thing, in C++, it is a special method that is
+automatically called when an object of a class is created.
+Destructors in C++ is called when the object goes out of scope or is explicitly 
+called to delete.
+Polymorphism: when one variable, reference or pointer connects to an instance of inheritance
+that has the same name between them. Normally pointers are able to find the variables corresponding
+to the data type it specifed ( which is what is expected). Unless you use Virtual functions
+Virtual: If there is a subclass/derived class implementation of this function, use that instead. 
+Otherwise use this one (often add override to the other function).
+
+
+8) How insertion,deleteion,searching works in a heap 
+
+Ans)
+Min Heap: A tree with the minimum value at the root node,
+Insertion - O(logn) put it at the bottom, swap with its parents until it is correctly placed
+Deletion - O(logn) remove the node at the location, swap the value with the last inserted element,
+take this root and swap with its child down to the root node.
+Often implemented in an array
+
+9) Sorting algorithms
+Bubble Sort - Go through the array, swap the out of order elements. O(n^2) time O(1) space
+Insertion Sort - Look from left to right, put the elements to the left of it in sorted order.
+Selection Sort - Find the minimum, scan the array for the new minimum, once its found, swap it with the new starting point
+Merge Sort - Divide and conquer, apply recursive calls to left and right. O(nlogn) runtime average O(n) space
+Heap Sort - Continuously apply max heap and repeatedly remove largest element. Building max heap in O(n) time. O(nlogn) runtime, O(n) space. 
+Quick Sort - Pick a pivot, swap based on pivot, divide and conquer on the elements middle. O(n^2) worst case, O(1) space
+
+10) Median 
+
+Ans)
+
+function select(list, left, right, n)
+    loop
+        if left = right then
+             return left
+        pivotIndex := pivot(list, left, right)
+        pivotIndex := partition(list, left, right, pivotIndex, n)
+        if n = pivotIndex then
+             return n
+        else if n < pivotIndex then
+             right := pivotIndex - 1
+        else
+             left := pivotIndex + 1
+
+ function partition(list, left, right, pivotIndex, n)
+     pivotValue := list[pivotIndex]
+     swap list[pivotIndex] and list[right]  // Move pivot to end
+     storeIndex := left
+     // Move all elements smaller than the pivot to the left of the pivot
+     for i from left to right − 1 do
+         if list[i] < pivotValue then
+             swap list[storeIndex] and list[i]
+             increment storeIndex
+     // Move all elements equal to the pivot right after
+     // the smaller elements
+     storeIndexEq = storeIndex
+     for i from storeIndex to right − 1 do
+         if list[i] = pivotValue then
+             swap list[storeIndexEq] and list[i]
+             increment storeIndexEq
+     swap list[right] and list[storeIndexEq]  // Move pivot to its final place
+     // Return location of pivot considering the desired location n
+     if n < storeIndex then
+         return storeIndex  // n is in the group of smaller elements
+     if n ≤ storeIndexEq then
+         return n  // n is in the group equal to pivot
+     return storeIndexEq // n is in the group of larger elements
+
+11) Prime Numbers
+
+Ans)
+Erastothenes Sieve
+void SieveOfEratosthenes(int n) 
+{ 
+    // Create a boolean array "prime[0..n]" and initialize 
+    // all entries it as true. A value in prime[i] will 
+    // finally be false if i is Not a prime, else true. 
+    bool prime[n+1]; 
+    memset(prime, true, sizeof(prime)); 
+  
+    for (int p=2; p*p<=n; p++) 
+    { 
+        // If prime[p] is not changed, then it is a prime 
+        if (prime[p] == true) 
+        { 
+            // Update all multiples of p greater than or  
+            // equal to the square of it 
+            // numbers which are multiple of p and are 
+            // less than p^2 are already been marked.  
+            for (int i=p*p; i<=n; i += p) 
+                prime[i] = false; 
+        } 
+    } 
+  
+    // Print all prime numbers 
+    for (int p=2; p<=n; p++) 
+       if (prime[p]) 
+          cout << p << " "; 
+} 
+

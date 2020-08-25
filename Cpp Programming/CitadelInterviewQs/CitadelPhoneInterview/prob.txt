@@ -224,6 +224,17 @@ f(x) = 2x/r^2
 E(x) = int_0^{r}2x^2/r^2 = 2/3*r
 (100-9)*Pr(10 times in a row)- 10 = (100-9)*(1/4)^10 - 10 = 10^-4-10
 
+22) Let x,y be uniformly distributed on [0,1] and separate the unit interval [0,1] into 3 pieces, what is the probability that the 3 pieces of the line can be constructed into a triangle?
+
+Ans)
+x,y,1-x-y
+x+y>1-x-y --> x+y>1/2
+y+1-x-y>x --> x <1/2
+x+1-x-y>y --> y <1/2
+
+given sample space
+x+y<=1
+
 
 
 
