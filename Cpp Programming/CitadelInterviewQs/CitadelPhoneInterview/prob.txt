@@ -236,9 +236,9 @@ given sample space
 x+y<=1
 
 
+23) Someone shows you two boxes and he tells you that one of these boxes contains two time as much as the other one, but he does not tell you which one. He lets you choose one of these boxes, and opens it. It turns out to have $10. Now he gives you the opportunity to change your mind and take only the money from the other box. Should you switch?
 
-
-
+Ans) It is inconclusive because you dont have information about how the money is distributed in the boxes. So knowing the amount of money in 1 box will make no difference. Don't be fooled that the E[X] = 0.5*20 + 0.5*5 = 12.5 > 10. That is only true when you assume that the person puts 5 dollars with prob 1/4, 10 dollars with prob 1/2, 20 dollars with prob 1/4.
 
 
 

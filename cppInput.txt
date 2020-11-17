@@ -1,0 +1,5 @@
+-1 0 3 5 9 12 
+[TwoSum  add  add  add  find  find] 
+"TwoSum"  "add"  "add"  "add"  "find"  "find"] 
+["TwoSum"  "add"  "add"  "add"  "find"  "find" 
+TwoSum  add  add  add  find  find 
